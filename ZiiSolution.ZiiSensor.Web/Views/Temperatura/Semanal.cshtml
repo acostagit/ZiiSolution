@@ -1,0 +1,229 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script type="text/javascript">
+
+    google.load("visualization", "1", { packages: ["corechart"] });
+
+    function getDadosAjax() {
+        $(function () {
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                url: '@Url.Action("GeraGraficoSemanal")',
+                data: '{}',
+                success:
+                    function (response) {
+                        //drawchart(response);
+                        desenharGrafico(response);
+                        //desenharGrafico();
+                    },
+                error: function () {
+                    alert("Erro ao carregar dados! Tente novamente.");
+                }
+            });
+        })
+    }
+
+    function gerarGrafico(dataValues) {
+
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('string', 'DataHora');
+        data.addColumn('number', 'o C');
+
+        data.addRows(3);
+
+        var dadosDoGrafico = JSON.parse(dataValues);
+
+        for (var i = 0; i < dadosDoGrafico.length; i++) {
+            data.setValue(i, 0, dadosDoGrafico[i].DataHora.substring(11, dadosDoGrafico[i].DataHora.length, dadosDoGrafico[i].DataHora));
+            data.setValue(i, 1, dadosDoGrafico[i].TemperaturaAtual);
+        }
+
+        var options = {
+            hAxis: {
+                title: 'Hora'
+            },
+            title: 'Temperatura diária',
+                height: 400,
+                width: 800,
+                position: "top",
+                fontsize: "14px",
+                chartArea: { center: 200 },
+            vAxis: {
+                title: 'Temperatura'
+            }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chartdiv'));
+        chart.draw(data, options);
+
+    }
+
+    function drawchart(dataValues) {
+        // var data = new google.visualization.DataTable();
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('datetime', 'DataHora');
+        data.addColumn('number', 'TemperaturaAtual');
+
+        data.addRows(dataValues.length-1);
+
+        var dadosDoGrafico = JSON.parse(dataValues);
+
+
+        var options = {
+            backgroundColor: 'transparent',
+            title: '',
+            chartArea: { right: 0, top: 0, width: "90%", height: "100%" },
+            height: 400
+            , width: 400,
+        };
+
+      
+        var chart = new google.visualization.BarChart(document.getElementById('chartdiv'));
+
+        chart.draw(data,
+         {
+             title: "Temperatura diária",
+             position: "top",
+             fontsize: "14px",
+             chartArea: { width: '100%' },
+         });
+
+
+        ////new google.visualization.LineChart(document.getElementById('chartdiv')).
+        ////    draw(dadosDoGrafico, { title: "Temperatura diária" });
+    }
+
+    function desenharGrafico() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Periodo');
+        data.addColumn('number', 'Temperatura Atual');
+
+        data.addRows(4);
+
+        //data.setValue(LINHA, COLUNA, VALOR);
+        data.setValue(0, 0, 'Segunda-Feira');
+        data.setValue(0, 1, 15);
+
+        data.setValue(1, 0, 'Terça-feira');
+        data.setValue(1, 1, 20);
+
+        data.setValue(2, 0, 'Quarta-feira');
+        data.setValue(2, 1, 23);
+
+        data.setValue(3, 0, 'Quinta-feira');
+        data.setValue(3, 1, 21);
+
+        var chart = new google.visualization.LineChart(document.getElementById('chartdiv'));
+
+        chart.draw(data,
+         {
+             title: "Temperatura semanal",
+             position: "top",
+             fontsize: "14px",
+             chartArea: { width: '100%' },
+         });
+    }
+
+    //Modelo
+    function desenharGraficoDevMedia() {
+
+        var data = google.visualization.arrayToDataTable([
+             ['Dia', 'Atividades Completas', 'Atividades Pendentes', { role: 'style' }, { role: 'annotation' }],
+             [{ v: [8, 0, 0], f: '8 AM' }, 2, 8.75, 'color: red', '8 AM'],
+             [{ v: [9, 0, 0], f: '9 AM' }, 2.5, 7.5, 'color: blue', 2.5],
+             [{ v: [10, 0, 0], f: '10 AM' }, 3.9, 6.3, 'opacity: 0.2', 'Pendentes: 6.3'],
+             [{ v: [11, 0, 0], f: '11 AM' }, 4, 5.25, 'stroke-color: black; stroke-width: 1; fill-color: yellow', '11 AM'],
+             [{ v: [12, 0, 0], f: '12 PM' }, 6, 4.25, 'stroke-color: pink; stroke-opacity: 0.6; stroke-width: 1; fill-color: green; fill-opacity: 0.2', '?']
+        ]);
+
+        var options = {
+            width: 1500,
+            height: 500,
+            title: 'Balanço de Atividades Entregues/Dia',
+            hAxis: {
+                title: 'Dia',
+                format: 'h:mm a',
+                viewWindow: {
+                    min: [7, 30, 0],
+                    max: [12, 0, 0]
+                }
+            },
+            vAxis: {
+                title: 'Atividades'
+            }
+        };
+
+        var chart = new google.visualization.LineChart(
+        document.getElementById('chartdiv'));
+
+        chart.draw(data, options);
+    }
+</script>
+
+<div id="chartdiv" style="width: 600px; height: 400px; text-align:right">
+</div>
+
+<script type="text/javascript">
+    //desenharGrafico();
+    getDadosAjax();
+    //desenharGraficoDevMedia();
+
+    @*$(function () {
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            url: '@Url.Action("GeraGrafico")',
+                data: '{}',
+                success: function (chartsdata) {
+                   // console.log(chartsdata);
+                    $(chartsdata).each(function (i) {
+                        document.writeln("<p>Nome: " + chartsdata[i].TemperaturaAtual + " | URL: " + chartsdata[i].TemperaturaMaxima + "</p>")
+                    });
+
+
+                    // Callback that creates and populates a data table,
+                    // instantiates the pie chart, passes in the data and
+                    // draws it.
+
+                 ////   var data = new google.visualization.DataTable();
+
+                 ////  // data.addColumn('string', 'TemperaturaAtual');
+                 ////   data.addColumn('number', 'TemperaturaAtual');
+
+                 ////   for (var i = 0; i < chartsdata.length; i++) {
+                 ////       data.addRow([chartsdata[i].TemperaturaAtual]);
+                 ////   }
+
+                 ////   // Instantiate and draw our chart, passing in some options
+                 ////var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
+
+                    ////chart.draw(data,
+                    ////  {
+                    ////      title: "Show Google Chart in ASP.NET",
+                    ////      position: "top",
+                    ////      fontsize: "14px",
+                    ////      chartArea: { width: '50%' },
+                    ////  });
+                },
+                error: function () {
+                    alert("Error loading data! Please try again.");
+                }
+            });
+        })*@
+
+</script>
+
+

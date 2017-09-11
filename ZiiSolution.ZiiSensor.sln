@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{1B6E73BC-7D43-437E-8EBF-BC02A91CC30F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZiiSolution.ZiiSensor.Dominio", "ZiiSolution.ZiiSensor.Dominio\ZiiSolution.ZiiSensor.Dominio.csproj", "{FFF7B524-4019-4146-A55E-ADE47CC32C98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Negocio", "Negocio", "{21EC4676-9E41-4EE3-96BF-C83A7AB29A8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositorio", "Repositorio", "{8B3654D3-53E9-46E8-B03F-A998C4410653}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{4138DDA0-1408-49AC-861E-4BC078E85EE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Teste", "Teste", "{27287033-9FBB-474D-957D-F2A5273C628F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZiiSolution.ZiiSensor.Negocio", "ZiiSolution.ZiiSensor.Negocio\ZiiSolution.ZiiSensor.Negocio.csproj", "{A87F1A1A-BDE6-411B-AF55-46308EC01162}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZiiSolution.ZiiSensor.Repositorio", "ZiiSolution.ZiiSensor.Repositorio\ZiiSolution.ZiiSensor.Repositorio.csproj", "{BD1B107D-E868-42EE-8483-F383D16E984E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZiiSolution.ZiiSensor.Web", "ZiiSolution.ZiiSensor.Web\ZiiSolution.ZiiSensor.Web.csproj", "{9CF08246-6367-4EAB-A3B2-95392438CCA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZiiSolution.ZiiSensor.Teste", "ZiiSolution.ZiiSensor.Teste\ZiiSolution.ZiiSensor.Teste.csproj", "{36BE2ADF-09D7-4471-9FA6-D9D04B0FADA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{84F373BF-82A5-4A61-8486-3145A5F62F86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZiiSolution.Api", "ZiiSolution.Api\ZiiSolution.Api.csproj", "{D4FC4B1C-77C9-46AA-BC7B-AACAD23290D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZiiSensor.Test", "ZiiSensor.Test\ZiiSensor.Test.csproj", "{6267327B-1463-4AFB-8ED3-2B23D5949D99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFF7B524-4019-4146-A55E-ADE47CC32C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFF7B524-4019-4146-A55E-ADE47CC32C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFF7B524-4019-4146-A55E-ADE47CC32C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFF7B524-4019-4146-A55E-ADE47CC32C98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A87F1A1A-BDE6-411B-AF55-46308EC01162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A87F1A1A-BDE6-411B-AF55-46308EC01162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A87F1A1A-BDE6-411B-AF55-46308EC01162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A87F1A1A-BDE6-411B-AF55-46308EC01162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1B107D-E868-42EE-8483-F383D16E984E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1B107D-E868-42EE-8483-F383D16E984E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1B107D-E868-42EE-8483-F383D16E984E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1B107D-E868-42EE-8483-F383D16E984E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CF08246-6367-4EAB-A3B2-95392438CCA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF08246-6367-4EAB-A3B2-95392438CCA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF08246-6367-4EAB-A3B2-95392438CCA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF08246-6367-4EAB-A3B2-95392438CCA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36BE2ADF-09D7-4471-9FA6-D9D04B0FADA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36BE2ADF-09D7-4471-9FA6-D9D04B0FADA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36BE2ADF-09D7-4471-9FA6-D9D04B0FADA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36BE2ADF-09D7-4471-9FA6-D9D04B0FADA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4FC4B1C-77C9-46AA-BC7B-AACAD23290D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4FC4B1C-77C9-46AA-BC7B-AACAD23290D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4FC4B1C-77C9-46AA-BC7B-AACAD23290D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4FC4B1C-77C9-46AA-BC7B-AACAD23290D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6267327B-1463-4AFB-8ED3-2B23D5949D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6267327B-1463-4AFB-8ED3-2B23D5949D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6267327B-1463-4AFB-8ED3-2B23D5949D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6267327B-1463-4AFB-8ED3-2B23D5949D99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FFF7B524-4019-4146-A55E-ADE47CC32C98} = {1B6E73BC-7D43-437E-8EBF-BC02A91CC30F}
+		{A87F1A1A-BDE6-411B-AF55-46308EC01162} = {21EC4676-9E41-4EE3-96BF-C83A7AB29A8E}
+		{BD1B107D-E868-42EE-8483-F383D16E984E} = {8B3654D3-53E9-46E8-B03F-A998C4410653}
+		{9CF08246-6367-4EAB-A3B2-95392438CCA9} = {4138DDA0-1408-49AC-861E-4BC078E85EE3}
+		{36BE2ADF-09D7-4471-9FA6-D9D04B0FADA5} = {27287033-9FBB-474D-957D-F2A5273C628F}
+		{D4FC4B1C-77C9-46AA-BC7B-AACAD23290D2} = {84F373BF-82A5-4A61-8486-3145A5F62F86}
+	EndGlobalSection
+EndGlobal

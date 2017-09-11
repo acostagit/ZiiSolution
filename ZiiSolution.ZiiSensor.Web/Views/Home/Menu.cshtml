@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dashboard</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="page-header">
+            <h1>Cadastro de Cliente</h1>
+        </div>
+        @using (Html.BeginForm())
+        {
+            <div class="panel">
+                <div style="float:left">
+                    <h3>Login</h3>
+                </div>
+                <div style="float:right">
+                    <img style="height:30px" src="@Url.Content("BrasilRisk_Logo.png")" />
+                </div>
+                <div>
+                  
+                    <div style="clear: both;"></div>
+                    <p><input type="text" id="usuario" name="usuario" placeholder="USuario" style="background-color:#fff;" /></p>
+                    <p><input type="password" id="senha" name="senha" placeholder="Senha" style="background-color:#fff;" /></p>
+                    <input type="submit" class="button" value="Acessar" />
+                    @*<p><a href="#">Esqueceu sua Senha?</a></p>*@
+                    <p class="error">Mensagem</p>
+                </div>
+            </div>
+                        }
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/script.js"></script>
+</body>
+
+</html>

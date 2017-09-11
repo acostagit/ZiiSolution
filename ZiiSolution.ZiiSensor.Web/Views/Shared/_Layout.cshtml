@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>ZiiSensor</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-static-top topo-fixo">
+            <div class="container">
+                <div class="navbar-header">
+                    <h1>Gráfico de Temperatura</h1>
+                    <div class="topo">
+                        <a href="#" class="icone_menu"><i class="material-icons">dehaze</i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav class="menu">
+        <ul class="nav" id="side-menu" style="display: block;">
+            <li>
+                <a href="#"><i class="fa fa-list-alt fa-fw"></i> <span class="nav-label">Cliente</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="@Url.Action("Incluir", "Cadastro")">Novo</a></li>
+                    <li><a href="@Url.Action("Consultar", "Cadastro")">Consultar</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-list-alt fa-fw"></i> <span class="nav-label">Temperatura</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="@Url.Action("Index", "Temperatura")">Diária</a></li>
+                    <li><a href="@Url.Action("Semanal", "Temperatura")">Semanal</a></li>
+                    <li><a href="@Url.Action("Quinzenal", "Temperatura")">Quinzenal</a></li>
+                    <li><a href="@Url.Action("Mensal", "Temperatura")">Mensal</a></li>
+                    <li><a href="@Url.Action("Anual", "Temperatura")">Anual</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-list-alt fa-fw"></i> <span class="nav-label">Relatórios</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="@Url.Action("Index", "Temperatura")">Diário</a></li>
+                    <li><a href="@Url.Action("Consultar", "Temperatura")">Semanal</a></li>
+                    <li><a href="@Url.Action("Consultar", "Temperatura")">Mensal</a></li>
+                    <li><a href="@Url.Action("Consultar", "Temperatura")">Anual</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-user"></i> <span class="nav-label">Usuário</span><span class="fa arrow"></span></a>
+                <ul class="nav navbar-top-links navbar-right">
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#" aria-expanded="false">
+                            <i class="fa fa-user"></i><b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="divider"></li>
+                            <li>
+                                <a href="@Url.Action("Alterar", "Account")">Perfil</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="@Url.Action("Logout", "Account")">Sair</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+
+    </main>
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; ZiiSolution - Soluções inteligentes</p>
+        <span>São Bernardo do Campo/SP</span>
+    </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
